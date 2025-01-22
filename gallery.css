@@ -8,6 +8,8 @@
   body {
     font-family: "Roboto Slab", serif;
     line-height: 1.6;
+    overflow: hidden; /* Hide scrolling */
+    height: 100%;    /* Prevent content cutoff */
   }
   /* Fullscreen Loader Container */
 #loader {
