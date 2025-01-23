@@ -7,6 +7,7 @@
   body {
     font-family: "Roboto Slab", serif;
     line-height: 1.6;
+    
   }
   /* Fullscreen Loader Container */
 #loader {
@@ -226,18 +227,48 @@
 
 .csr-container {
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  width: 70%; /* Reduces the total container width to 50% */
+  gap: 1rem; /* Adds spacing between the text box and image */
 }
 
 .csr .box {
-  max-width: 50%;
+  flex: 1; /* Ensures the text box takes up equal space */
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.csr .csr-image {
+  flex: 1; /* Ensures the image container takes up equal space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevents the image from spilling out */
 }
 
 .csr .csr-image img {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensures the image fills its container width */
+  height: 100%; /* Ensures the image fills its container height */
+  object-fit: cover; /* Ensures the image scales proportionally and fills the container */
+}
+
+@media (max-width: 768px) {
+  .csr-container {
+    flex-direction: column; /* Stacks the text box on top of the image */
+    width: 90%; /* Adjusts the width for smaller screens */
+  }
+
+  .csr .box,
+  .csr .csr-image {
+    flex: none; /* Allows each to occupy full width */
+    width: 100%; /* Makes both the text box and image full width */
+  }
 }
 
 /* Testimonials */
@@ -482,7 +513,7 @@
   }
 
   .hero-text {
-      padding-top: 15px; /* Add some spacing below the image */
+      padding-top: 20px; /* Add some spacing below the image */
   }
 }
 

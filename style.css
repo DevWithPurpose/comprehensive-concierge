@@ -8,6 +8,7 @@
   body {
     font-family: "Roboto Slab", serif;
     line-height: 1.6;
+    font-size: 25px;
   }
   /* Fullscreen Loader Container */
 #loader {
@@ -72,38 +73,52 @@
     font-size: 45px;
     font-weight: 500;
   }
+/*   
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+  } */
+/*   
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  } */
   
   .nav-links {
-    list-style: none;
     display: flex;
-    gap: 15px;
+    list-style: none;
+    gap: 25px;
   }
   
-  .nav-links li {
-    display: inline;
-  }
-  
-  .nav-links a {
+  .nav-links li a {
     text-decoration: none;
-    color: #333333;
-    font-size: 1rem;
-    padding: 5px 10px;
-    transition: color 0.3s, transform 0.3s;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
   }
-  
-  .nav-links a:hover {
-    color: #CDC1FF;
-    transform: scale(1.1);
-  }
-  
   .nav-links a.active {
     border-bottom: 2px solid #000;
   }
+  .nav-links li a:hover {
+    color: #000;
+  }
+  
   .menu-icon {
     display: none;
-    font-size: 1.8rem;
+    font-size: 24px;
     cursor: pointer;
+    color: #000;
+    font-family: 'Courier New', Courier, monospace;
   }
+  
+
+
   /* Keyframe Animations */
   @keyframes slideDown {
     from {
@@ -122,7 +137,7 @@
     font-size: 20px;
     gap: 20px; /* Space between image and text */
     flex-direction: row; /* Place image beside text */
-    padding: 25px;
+    padding: 20px;
     height: 100vh; /* Make the hero section fill the viewport */
   }
   
@@ -138,7 +153,24 @@
     text-align: left; /* Align text to the left */
   }
   
-
+  .hero-content {
+    max-width: 50%;
+    text-align: left;
+  }
+  
+  .hero-content h1 {
+    font-size: 4.5rem;
+    color: #000;
+    margin-bottom: 20px; /* Adds spacing below the h1 */
+    margin-top: 20px; /* Moves the h1 text down */
+  }
+  
+  .hero-content p {
+    margin: 10px 0 20px;
+    font-size: 20px;
+  }
+  
+  
 /* Glowing Button */
 .glow-button {
   font-family: "Roboto Slab", serif;
@@ -272,7 +304,7 @@
   }
   
   .icon {
-    font-size: 2.5rem; /* Increase size (default is usually around 1rem) */
+    font-size: 3rem; /* Increase size (default is usually around 1rem) */
     color: #000; /* Optional: Change color */
   }
   
@@ -396,6 +428,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 50px 20px;
+  font-size: 25px;
   background: linear-gradient(to right, #E8F9FF, #C4D9FF);
 }
 
@@ -403,71 +436,26 @@
   max-width: 50%;
 }
 
-.property-management h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.property-management p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.property-management .images {
+.property-management .image {
+  max-width: 50%;
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .property-management img {
-  width: 200px;
-  height: auto;
+  width: 100%; /* Make the image fill the container */
+  max-width: 400px; /* Limit the maximum size */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px #C4D9FF, 0 0 20px #C4D9FF;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .property-management img:hover {
-  transform: scale(1.05);
-}
-/* Responsive Styles for Property Management Section */
-@media (max-width: 768px) {
-  .property-management {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .property-management .content {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .property-management .images {
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .property-management img {
-    width: 80%;
-    max-width: 300px;
-  }
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 0 20px #E5D9F2, 0 0 30px #E5D9F2;
 }
 
-@media (max-width: 480px) {
-  .property-management h2 {
-    font-size: 2rem;
-  }
-
-  .property-management p {
-    font-size: 1rem;
-  }
-
-  .property-management img {
-    width: 100%;
-    max-width: 250px;
-  }
-}
 
   /* Blog Section */
 .blog-section {
@@ -630,7 +618,7 @@
 
 .social-icon:hover {
   transform: scale(1.2);
-  color: #72BF78;
+  color: #000;
 }
 
 .footer-bottom {
@@ -655,22 +643,45 @@
   }
 
   .hero-text {
-      padding-top: 15px; /* Add some spacing below the image */
+      padding-top: 200px; /* Add some spacing below the image */
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Show menu icon */
+  }
+
+  .nav-links {
+    display: none; /* Hide navbar by default */
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 100;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show navbar when active class is added */
+  }
+
+  .nav-links li {
+    margin: 10px 0;
   }
 }
 
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .navbar .menu-icon {
+  .nav-links .menu-icon {
     display: block;
     color: #fff;
     font-size: 1.5rem;
     cursor: pointer;
   }
+
 
   .hero-content h1 {
     font-size: 1.8rem;
@@ -683,7 +694,7 @@
   .blog h2 {
     font-size: 1.5rem;
   }
-}
+
 
 @media (max-width: 480px) {
   .hero-content h1 {
@@ -702,26 +713,20 @@
     font-size: 1.2rem;
   }
 }
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    width: 200px;
-    border-radius: 5px;
-    overflow: hidden;
+  .property-management {
+    flex-direction: column; /* Stack text and image vertically */
+    text-align: center; /* Center align the content */
+    font-size: 30px;
   }
 
-  .nav-links.active {
-    display: flex;
+  .property-management .content,
+  .property-management .image {
+    max-width: 100%; /* Make both take full width */
+    font-size: 15px;
   }
 
-  .menu-icon {
-    display: block;
+  .property-management .image {
+    margin-top: 15px; /* Add spacing between the text and image */
   }
 }
